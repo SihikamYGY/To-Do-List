@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My To Do list</title>
+</head>
+<style>
+  li{
+    background-color: rgb(167, 167, 167);
+    width: 640px;
+    size: 10px;
+  } 
+
+  .container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 700px;
+    background-color: #2E4374;
+    margin: auto;
+    border-radius: 10px;
+    border: 3px black solid;
+    margin-top: 120px;
+  }
+
+  h2 {
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #F5F5DC;
+  }
+
+  .input {
+    border-radius: 20px;
+    border: rgb(207, 207, 207) solid;
+    height: 30px;
+    width: 200px;
+    margin-left: 100px;
+    padding-left: 3px;
+  }
+
+  .click:hover {
+    height: 35px;
+    width: 50px;
+    border-radius: 20px;
+    border: rgb(207, 207, 207);
+    background-color: rgb(120, 120, 120);
+    margin-left: 10px;
+  }
+
+  .click {
+    height: 35px;
+    width: 50px;
+    border-radius: 20px;
+    border: rgb(207, 207, 207);
+    background-color: rgb(180, 180, 180);
+    margin-left: 10px;
+    size: 10px;
+    font-size: 30px;
+    
+  }
+
+  .block {
+    margin: auto;
+    width: 500px;
+    display: flex;
+  }
+
+  .space {
+    height: 20px;
+  }
+
+  .conta {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 700px;
+    background-color: #F1EFEF;
+    margin: auto;
+    border-radius: 10px;
+    border: 3px black solid;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  hr {
+    width: 680px;
+    height: 2px;
+    border-width: 0;
+    color: black;
+    background-color: black;
+  }
+
+  #hehe {
+    size: 10px;
+    height: fit-content;
+    width: fit-content;
+  }
+
+  #ty {
+    margin-top: 150px;
+    margin-left: 700;
+    font-size: 30px;
+  }
+</style>
+
+<body>
+  <div class="container">
+    <h2 style="margin:5px">My To Do List</h2>
+    <div class="block">
+      <input type="text" id="input" class="input" placeholder="Ketik Apa Aja">
+      <button onclick="newElement()" class="click"  ><span id="hehe">&#43;</span></button>
+    </div>
+  </div>
+  <div class="space">.</div>
+  <div class="conta">
+  <hr>
+  <ul id="list">
+  </ul>
+  </div>
+  <p id="ty">credit : dzikri</p>
+  <script>
+    //Add Something
+    function newElement() {
+      const input = document.getElementById("input").value;
+      const list = document.createElement("li");
+      document.getElementById("list").appendChild(list);
+      list.append(input);
+      document.getElementById("input").value= " "
+
+      let hapus = document.createElement("button");
+      hapus.onclick = function (){
+        list.remove()
+      };
+
+      hapus.innerHTML = "&#xF5DE";
+      list.appendChild(hapus); 
+
+      let udah = document.createElement("button");
+      udah.onclick = function(){
+        list.setAttribute ("style", "background-color : #176B87; width : 640px; border-radius : 10px; font-size : 20px; margin-top : 10px; padding-top : 5px; padding-left : 2px; padding-bottom : 2px; margin-left : 5px ;")
+        udah.remove(  )
+        udah.setAttribute ("style", "margin-left : 100px;")
+      }
+
+
+      udah.innerHTML = "&#10004;";
+      list.appendChild(udah )
+
+      list.onclick = hapus.setAttribute("style", "margin-left : 10px; margin-bottom : 4px; border-radius : 10px; border : 2px gray solid;")
+      list.onclick = udah.setAttribute("style", "margin-left : 10px; margin-bottom : 4px; border-radius : 10px; border : 2px gray solid;")
+      list.onclick = list.setAttribute("style", "border-radius : 10px; font-size : 20px; margin-top : 10px; padding-top : 3px; padding-left : 5px;")
+    }
+
+  </script>
+</body>
+
+</html>
